@@ -5,16 +5,17 @@
 import java.math.*;
 public class p2{
 	protected static BigInteger n; //number of distinct orderable objects
-	
+	protected static BigInteger m; //number of items selected sequentially
 	public static void main(String[] args){
-		if(args.length != 1){
-			System.out.println("please enter one integer for number of distinct objects");
+		if(args.length != 2){
+			System.out.println("please enter two integers in form: items, number selected sequentially");
 			System.exit(1);
 		}
 		n = new BigInteger(args[0]);
-		System.out.printf("objects: %d\n", n);
-		
-		System.out.printf("number of permutations: %s\n", factorial(n).toString());
+		m = new BigInteger(args[1]);
+		System.out.printf("items: %d\n", n);
+		System.out.printf("selected: %d\n", m);
+		System.out.printf("number of ordered selections possible: %s\n", factorial(n).divide(factorial(n.subtract(m))).toString());
 	}
 	
 	public static BigInteger factorial(BigInteger a){

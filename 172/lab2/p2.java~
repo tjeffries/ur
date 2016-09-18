@@ -14,7 +14,7 @@ public class p2{
 		n = new BigInteger(args[0]);
 		System.out.printf("objects: %d\n", n);
 		
-		System.out.printf("number of assignments: %s\n", factorial(n).toString());
+		System.out.printf("number of permutations: %s\n", factorial(n).toString());
 	}
 	
 	public static BigInteger factorial(BigInteger a){
